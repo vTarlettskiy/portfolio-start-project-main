@@ -22,16 +22,16 @@ export const Project = (props: ProjectPropsType) => {
 };
 
 const StyledProject = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 992px;
-  max-height: 524px;
+    display: flex;
+    width: 100%;
+    max-width: 992px;
+    max-height: 524px;
 `
 
 const ProjectInfoBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 const ProjectName = styled.h3`
@@ -47,8 +47,8 @@ const ViewProject = styled.a`
 `
 
 const ProjectImage = styled.img`
-  height: 524px;
-  object-fit: cover;
+    height: 524px;
+    object-fit: cover;
 `
 
 

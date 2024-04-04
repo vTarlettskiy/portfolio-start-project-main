@@ -27,12 +27,12 @@ export const Socials = () => {
 };
 
 const StyledSocials = styled.div`
-  
+
 `
 
 const SocialList = styled.ul`
-  list-style: none;
-  display: flex;
+    list-style: none;
+    display: flex;
 `
 
 const SocialItem = styled.li`

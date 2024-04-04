@@ -22,9 +22,9 @@ export const Menu = () => {
 
 const StyledMenu = styled.nav`
     ul {
-      display: flex;
-      gap: 48px;
-      justify-content: center;
+        display: flex;
+        gap: 48px;
+        justify-content: center;
     }
 `
 
@@ -33,11 +33,11 @@ const ListItem = styled.li`
 `
 
 const Link = styled.a`
-  font-family: Raleway, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  color: ${theme.colors.primaryText};
-  text-align: center;
-  
-  
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: ${theme.colors.primaryText};
+    text-align: center;
+
+
 `

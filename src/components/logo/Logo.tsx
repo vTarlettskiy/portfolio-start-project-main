@@ -9,8 +9,8 @@ export const Logo = () => {
 };
 
 const Link = styled.a`
-  font-family: Comfortaa, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: ${theme.colors.primaryText};
+    font-family: Comfortaa, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: ${theme.colors.primaryText};
 `

@@ -35,20 +35,20 @@ export const Contacts = () => {
 };
 
 const StyledContacts = styled.section`
-  min-height: 100vh;
+    min-height: 100vh;
 `
 
 const StyledForm = styled.form`
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 `
 
 const StyledLabel = styled.label`
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 `
 
 const Field = styled.input`
