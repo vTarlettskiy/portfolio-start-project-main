@@ -11,7 +11,7 @@ export const Projects = () => {
     return (
         <StyledProjects>
             <SectionTitle>Projects</SectionTitle>
-            <FlexWrapper direction={'column'} align={'center'}>
+            <FlexWrapper direction={'column'} align={'center'} gap={'80px 0'}>
                 <Project projectName={'My first project'}
                          description={'I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.'}
                          image={project1IMage}/>

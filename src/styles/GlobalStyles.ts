@@ -47,6 +47,16 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
         margin-bottom: 12px;
     }
+    
+    section {
+        margin-bottom: 145px;
+    }
+    
+    section:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    
 
 
 

@@ -10,7 +10,7 @@ export const Skills = () => {
         <StyledSkills>
             <Container>
                 <SectionTitle>Skills</SectionTitle>
-                <FlexWrapper wrap={'wrap'} justify={'space-evenly'} rowGap={'74px'}>
+                <FlexWrapper wrap={'wrap'} justify={'space-evenly'} gap={'74px 0'}>
                     <Skill iconId='icon1'/>
                     <Skill iconId='icon2'/>
                     <Skill iconId='icon3'/>
@@ -30,7 +30,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-    min-height: 100vh;
+    
 `
 
 

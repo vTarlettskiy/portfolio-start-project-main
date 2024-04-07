@@ -22,37 +22,48 @@ export const Contacts = () => {
                     </StyledLabel>
                     <StyledLabel>
                         Message
-                        <Field as={'textarea'}/>
+                        <Field as={'textarea'} height={'160px'} />
                     </StyledLabel>
-                    <Button type={'submit'}>Send</Button>
+                    <Button type={'submit'} btnType={'primary'} btnAlign={'end'}>Send</Button>
                 </StyledForm>
                 <Socials/>
                 <Copyright>Vadim Tarletskiy 2024 </Copyright>
+                <Image src={image}/>
             </FlexWrapper>
-            <Image src={image}/>
         </StyledContacts>
     );
 };
 
 const StyledContacts = styled.section`
-    min-height: 100vh;
+    height: 600px;
 `
 
 const StyledForm = styled.form`
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
 `
 
 const StyledLabel = styled.label`
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    font-weight: bolder;
 `
 
-const Field = styled.input`
+type FieldPropsType = {
+    height?: string
+}
 
+const Field = styled.input<FieldPropsType>`
+    margin-bottom: 24px;
+    border: 1px solid #E8ECF4;
+    border-radius: 8px;
+    min-height: 40px;
+    height: ${props => props.height || '40px'};
+    resize: none;
 `
 
 const Copyright = styled.small`
@@ -60,6 +71,8 @@ const Copyright = styled.small`
 `
 
 const Image = styled.img`
-
+    position: relative;
+    top: -100px;
+    width: 100%;
 `
 

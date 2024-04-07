@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from "../../../components/icon/Icon";
 import styled from "styled-components";
+import {Icon} from "../../../components/icon/Icon";
 
 type StyledSkillPropsType = {
     iconId: string
@@ -17,5 +17,6 @@ export const Skill = (props: StyledSkillPropsType) => {
 const StyledSkill = styled.div`
     width: calc(100% / 6);
     min-width: 150px;
+    
 `
 
