@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    *:focus-visible {
+        outline: 2px solid #3af6fc;
+    }
+
     body {
         font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -47,16 +51,16 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
         margin-bottom: 12px;
     }
-    
+
     section {
         margin-bottom: 145px;
     }
-    
+
     section:last-of-type {
         margin-bottom: 0;
     }
-    
-    
+
+
 
 
 

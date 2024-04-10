@@ -5,14 +5,14 @@ import {theme} from "../../styles/Theme";
 export const Menu = () => {
     return (
         <StyledMenu>
-            <ul>
-                <ListItem>
+            <ul role={'menu'}>
+                <ListItem role={'menuitem'}>
                     <Link href="">About</Link>
                 </ListItem>
-                <ListItem>
+                <ListItem role={'menuitem'}>
                     <Link href="">Projects</Link>
                 </ListItem>
-                <ListItem>
+                <ListItem role={'menuitem'}>
                     <Link href="">Contacts</Link>
                 </ListItem>
             </ul>
@@ -25,6 +25,12 @@ const StyledMenu = styled.nav`
         display: flex;
         gap: 48px;
         justify-content: center;
+    }
+    
+    @media ${theme.media.mobile} {
+        ul {
+            display: none;
+        }
     }
 `
 

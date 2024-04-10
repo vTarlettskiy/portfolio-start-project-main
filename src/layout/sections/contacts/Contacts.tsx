@@ -72,7 +72,7 @@ const Copyright = styled.small`
 
 const Image = styled.img`
     position: relative;
-    top: -100px;
+    top: -130px;
     width: 100%;
 `
 
