@@ -47,13 +47,19 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         color: ${theme.colors.accent};
         font-family: Nunito, sans-serif;
-        font-weight: bold;
+        font-weight: 700;
         font-size: 20px;
         margin-bottom: 12px;
+        text-transform: uppercase;
     }
 
     section {
         margin-bottom: 145px;
+        
+        @media ${theme.media.mobile} {
+            margin: 0 15px 80px 15px;
+            
+        }
     }
 
     section:last-of-type {

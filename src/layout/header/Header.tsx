@@ -7,13 +7,14 @@ import {FlexWrapper} from "../../components/FlexWrapper";
 import {MobileMenu} from "../../components/menu/MobileMenu";
 
 export const Header = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
     return (
         <StyledHeader>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
                     <Menu/>
-                    <MobileMenu isOpen={true}/>
+                    <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>

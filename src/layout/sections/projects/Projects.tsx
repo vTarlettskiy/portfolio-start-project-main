@@ -11,16 +11,16 @@ export const Projects = () => {
     return (
         <StyledProjects>
             <SectionTitle>Projects</SectionTitle>
-            <FlexWrapper direction={'column'} align={'center'} gap={'80px 0'}>
-                <Project projectName={'My first project'}
+            <FlexWrapper direction={'column'} align={'center'} >
+                <Project projectName={'Project name'}
                          description={'I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.'}
                          image={project1IMage}/>
 
-                <Project projectName={'My second project'}
+                <Project projectName={'Project name'}
                          description={'What was your role, your deliverables, if the project was personal, freelancing.'}
                          image={project2IMage}/>
 
-                <Project projectName={'My third project'}
+                <Project projectName={'Project name'}
                          description={'You can also add in this description the type of the project, if it was for web, mobile, electron.'}
                          image={project3IMage}/>
             </FlexWrapper>
@@ -30,4 +30,5 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
     min-height: 100vh;
+    margin: 0 15px;
 `

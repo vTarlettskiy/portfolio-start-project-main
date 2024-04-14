@@ -23,4 +23,8 @@ export const SectionTitle = styled.h2`
         left: 50%;
         transform: translateX(-50%);
     }
+    
+    @media ${theme.media.tablet} {
+        margin-bottom: 58px;
+    }
 `

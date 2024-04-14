@@ -2,14 +2,20 @@ import React from 'react';
 import styled, {css} from "styled-components";
 import {theme} from "../../styles/Theme";
 
-export const MobileMenu = (props: PopupPropsType) => {
+type PopupPropsType = {
+    isOpen: boolean
+    setIsOpen: (isOpen: boolean) => void
+}
+
+export const MobileMenu = ({isOpen, setIsOpen}: PopupPropsType) => {
+
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
                 <span></span>
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={isOpen}>
                 <ul role={'menu'}>
                     <ListItem role={'menuitem'}>
                         <Link href="">About</Link>
@@ -35,21 +41,18 @@ const StyledMobileMenu = styled.nav`
     }
 `
 
-type PopupPropsType = {
-    isOpen: boolean
-}
 
-const MobileMenuPopup = styled.div<PopupPropsType>`
+const MobileMenuPopup = styled.div<Pick<PopupPropsType, 'isOpen'>>`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 99999;
-    background-color: ${theme.colors.accent};
+    background-color: ${theme.colors.accent}; 
     display: none;
     
-    ${props => props.isOpen && css<PopupPropsType>`
+    ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
         display: flex;
         justify-content: center;
         align-items: center;
@@ -64,32 +67,38 @@ const MobileMenuPopup = styled.div<PopupPropsType>`
     }
 `
 
-const BurgerButton = styled.button<PopupPropsType>`
+const BurgerButton = styled.button<Pick<PopupPropsType, 'isOpen'>>`
     position: fixed;
     width: 24px;
     height: 24px;
+    top: 14px;
+    right: 11px;
     z-index: 99999999;
+    
 
     span {
         display: block;
-        width: 100%;
+        width: 18px;
         height: 2px;
-        background-color: #000000;
+        background-color: ${props=> props.isOpen ? 'transparent' : '#000000'};
         position: absolute;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-        ${props => props.isOpen && css<PopupPropsType>`
+        ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
             color: rgba(255, 255, 255, 0);
         `}
+        
         &::before {
             content: '';
             display: block;
             width: 100%;
             height: 2px;
             background-color: #000000;
-            //position: absolute;
-            transform: translateY(-10px);
+            position: absolute;
+            transform: translateY(-6px);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-            ${props => props.isOpen && css<PopupPropsType>`
+            ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
                 transform: rotate(45deg) translateY(0);
             `}
         }
@@ -100,11 +109,11 @@ const BurgerButton = styled.button<PopupPropsType>`
             width: 100%;
             height: 2px;
             background-color: #000000;
-            //position: absolute;
+            position: absolute;
+            transform: translateY(6px);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-            transform: translateY(10px);
-
-            ${props => props.isOpen && css<PopupPropsType>`
+            ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
                 transform: rotate(-45deg) translateY(0);
             `}
         }

@@ -4,12 +4,14 @@ import photo from '../../../assets/images/image-2.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {Button} from "../../../components/Button";
+import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'}>
+                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap-reverse'}>
                     <InfoBlock>
                         <MainTitle>Software Developer</MainTitle>
                         <Greetings>Hello, my name<br/> is Vahid Navazan</Greetings>
@@ -32,8 +34,7 @@ const StyledMain = styled.div`
     min-height: 100vh;
     display: flex;
     position: relative;
-
-
+    
 `
 
 const Photo = styled.img`
@@ -44,17 +45,26 @@ const Photo = styled.img`
     top: 0;
     right: 0;
     z-index: -1;
+    
+    @media ${theme.media.tablet} {
+        width: auto;
+        height: 407px;
+    }
 `
 
 const MainTitle = styled.h1`
-
+    
 `
 
 const Greetings = styled.span`
+    // ${font({family: 'Roboto', weight: 700, Fmin: 42, Fmax: 64})}
     font-family: Roboto, sans-serif;
     font-size: 64px;
-    font-weight: Bold;
+    font-weight: 700;
 
+    @media ${theme.media.mobile} {
+        font-size: 42px;
+    }
 `
 
 const About = styled.p`
@@ -75,6 +85,26 @@ const ButtonBlock = styled.div`
 const InfoBlock = styled.div`
     position: relative;
     z-index: 1;
-    max-width: 510px;
-
+    width: fit-content;
+    max-width: 510px; //     margin-top: 471px;
+    
+    @media screen and (max-width: 1000px) {
+        margin-top: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    @media screen and (max-width: 855px) {
+        margin-top: 600px
+    }
+    
+    @media ${theme.media.tablet} {
+        margin-top: 450px
+    }
+    
+    @media ${theme.media.mobile} {
+        
+    }
 `
