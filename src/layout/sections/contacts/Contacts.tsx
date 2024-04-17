@@ -1,41 +1,39 @@
 import React from 'react';
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
-import {Socials} from "./Socials";
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import image from '../../../assets/images/image-5.webp'
 import {Button} from "../../../components/Button";
+import {Container} from "../../../components/Container";
 
 export const Contacts = () => {
     return (
         <StyledContacts>
-            <SectionTitle>Contact me</SectionTitle>
-            <FlexWrapper direction={'column'} align={'center'}>
-                <StyledForm>
-                    <StyledLabel>
-                        Name
-                        <Field/>
-                    </StyledLabel>
-                    <StyledLabel>
-                        Email
-                        <Field type={'email'}/>
-                    </StyledLabel>
-                    <StyledLabel>
-                        Message
-                        <Field as={'textarea'} height={'160px'} />
-                    </StyledLabel>
-                    <Button type={'submit'} btnType={'primary'} btnAlign={'end'}>Send</Button>
-                </StyledForm>
-                <Socials/>
-                <Copyright>Vadim Tarletskiy 2024 </Copyright>
-                <Image src={image}/>
-            </FlexWrapper>
+            <Container>
+                <SectionTitle>Contact me</SectionTitle>
+                <FlexWrapper direction={'column'} align={'center'}>
+                    <StyledForm>
+                        <StyledLabel>
+                            Name
+                            <Field/>
+                        </StyledLabel>
+                        <StyledLabel>
+                            Email
+                            <Field type={'email'}/>
+                        </StyledLabel>
+                        <StyledLabel>
+                            Message
+                            <Field as={'textarea'} height={'160px'} />
+                        </StyledLabel>
+                        <Button type={'submit'} btnType={'primary'} btnAlign={'end'}>Send</Button>
+                    </StyledForm>
+                </FlexWrapper>
+            </Container>
         </StyledContacts>
     );
 };
 
 const StyledContacts = styled.section`
-    height: 600px;
+    height: auto;
 `
 
 const StyledForm = styled.form`
@@ -66,13 +64,11 @@ const Field = styled.input<FieldPropsType>`
     resize: none;
 `
 
-const Copyright = styled.small`
 
-`
 
-const Image = styled.img`
-    position: relative;
-    top: -130px;
-    width: 100%;
-`
+// const Image = styled.img`
+//     position: relative;
+//     top: -130px;
+//     width: 100%;
+// `
 

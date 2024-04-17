@@ -30,7 +30,7 @@ export const Main = () => {
     );
 };
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
     position: relative;
@@ -57,7 +57,7 @@ const MainTitle = styled.h1`
 `
 
 const Greetings = styled.span`
-    // ${font({family: 'Roboto', weight: 700, Fmin: 42, Fmax: 64})}
+     // ${font({family: 'Roboto', weight: 700, Fmin: 42, Fmax: 64})}
     font-family: Roboto, sans-serif;
     font-size: 64px;
     font-weight: 700;
@@ -104,7 +104,5 @@ const InfoBlock = styled.div`
         margin-top: 450px
     }
     
-    @media ${theme.media.mobile} {
-        
-    }
+    
 `

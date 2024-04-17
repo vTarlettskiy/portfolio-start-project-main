@@ -54,16 +54,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     section {
-        margin-bottom: 145px;
+        padding-bottom: 145px;
         
         @media ${theme.media.mobile} {
-            margin: 0 15px 80px 15px;
+            padding-bottom: 80px;
             
         }
     }
 
     section:last-of-type {
-        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
 
