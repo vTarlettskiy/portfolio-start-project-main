@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Icon} from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import image from '../../assets/images/image-5.webp'
+import {theme} from "../../styles/Theme";
 
 
 export const Footer = () => {
@@ -37,17 +38,22 @@ const StyledFooter = styled.footer`
     height: auto;
     
     &::after {
-        background: url(${image}) center center / 100% no-repeat;
+        background: url(${image}) center center / 100% 100% no-repeat;
         content: '';
         position: absolute;
         right: 0;
         bottom: 0;
         z-index: -100;
-        height: 100%;
         width: 100%;
+        aspect-ratio: 1440/344;
+        
     }
     
-    padding-bottom: 200px;
+    padding-bottom: 240px;
+    
+    @media ${theme.media.tablet} {
+        padding-bottom: 90px;
+    }
 `
 
 const SocialList = styled.ul`

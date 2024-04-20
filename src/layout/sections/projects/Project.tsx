@@ -33,6 +33,10 @@ const StyledProject = styled.div`
     overflow: hidden;
     margin-bottom: 80px;
     
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    
     &:nth-child(even) {
         flex-direction: row-reverse;
         
@@ -57,9 +61,7 @@ const ProjectInfoBlock = styled.div`
     
     @media ${theme.media.tablet} {
         height: 524px;
-      
     }
-    
     
 `
 

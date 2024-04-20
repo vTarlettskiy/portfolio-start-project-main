@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from "styled-components";
-import photo from '../../../assets/images/image-2.webp'
+import bg from '../../../assets/images/yellow-bg.webp';
+import photo from '../../../assets/images/photo.webp';
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {Button} from "../../../components/Button";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 
+
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap-reverse'}>
+                <FlexWrapper align={'flex-end'} justify={'space-between'} wrap={'wrap-reverse'}>
                     <InfoBlock>
                         <MainTitle>Software Developer</MainTitle>
                         <Greetings>Hello, my name<br/> is Vahid Navazan</Greetings>
@@ -23,7 +25,11 @@ export const Main = () => {
                             <Button btnType={'secondary'}>LinkedIn</Button>
                         </ButtonBlock>
                     </InfoBlock>
-                    <Photo src={photo} alt=''/>
+                    <PhotoContainer>
+                        <Photo src={photo} alt=''/>
+                        <PhotoBG src={bg} alt=''/>
+                    </PhotoContainer>
+
                 </FlexWrapper>
             </Container>
         </StyledMain>
@@ -31,25 +37,40 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
-    position: relative;
+    padding: 110px 0 254px 0;
+    overflow: hidden;
     
 `
 
 const Photo = styled.img`
-    width: 720px;
-    height: 630px;
     object-fit: cover;
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
+    top: -127px;
+    right: -111px;
+    z-index: 111;
     
     @media ${theme.media.tablet} {
         width: auto;
         height: 407px;
     }
+`
+
+const PhotoBG = styled.img`
+    object-fit: cover;
+    position: absolute;
+    top: -376px;
+    right: -167px;
+    z-index: -1;
+    
+    @media ${theme.media.tablet} {
+        width: auto;
+        height: 550px;
+        top: -271px;
+        right: -146px
+    }
+    
 `
 
 const MainTitle = styled.h1`
@@ -88,21 +109,24 @@ const InfoBlock = styled.div`
     width: fit-content;
     max-width: 510px; //     margin-top: 471px;
     
-    @media screen and (max-width: 1000px) {
-        margin-top: 500px;
+    @media screen and (max-width: 934px) {
+        margin-top: 600px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         max-width: 100%;
+        
     }
     
-    @media screen and (max-width: 855px) {
-        margin-top: 600px
-    }
     
     @media ${theme.media.tablet} {
-        margin-top: 450px
+        margin-top: 333px
     }
     
     
+`
+
+const PhotoContainer = styled.div`
+    position: relative;
+    z-index: 0;
 `
