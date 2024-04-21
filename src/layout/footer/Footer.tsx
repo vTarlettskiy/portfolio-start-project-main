@@ -1,80 +1,49 @@
 import React from 'react';
-import styled from "styled-components";
 import {Icon} from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import image from '../../assets/images/image-5.webp'
-import {theme} from "../../styles/Theme";
+import {S} from './Footer_Styles'
 
+const SocialItemsData = [
+    {
+        iconId: 'icon13',
+        height: '38px',
+        width: '38px',
+        viewBox: 'border-box',
+    },
+    {
+        iconId: 'icon14',
+        height: '38px',
+        width: '38px',
+        viewBox: 'border-box',
+    },
+    {
+        iconId: 'icon15',
+        height: '48px',
+        width: '48px',
+        viewBox: 'border-box',
+    },
+]
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <FlexWrapper direction={'column'} align={'center'} justify={'center'}>
-                <SocialList>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'icon13'} height={'38px'} width={'38px'} viewBox={'border-box'}/>
-                        </SocialLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'icon14'} height={'38px'} width={'38px'} viewBox={'border-box'}/>
-                        </SocialLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'icon15'} height={'48px'} width={'48px'} viewBox={'border-box'}/>
-                        </SocialLink>
-                    </SocialItem>
-                </SocialList>
-                <Copyright>Vadim Tarletskiy 2024 </Copyright>
+                <S.SocialList>
+
+                    {SocialItemsData.map((s, index) => {
+                        return (
+                            <S.SocialItem>
+                                <S.SocialLink>
+                                    <Icon iconId={s.iconId} height={s.height} width={s.width} viewBox={s.viewBox}/>
+                                </S.SocialLink>
+                            </S.SocialItem>
+                        )
+                    })}
+
+                </S.SocialList>
+                <S.Copyright>Vadim Tarletskiy 2024 </S.Copyright>
             </FlexWrapper>
-        </StyledFooter>
-    );
-};
+        </S.Footer>
+    )
+}
 
-const StyledFooter = styled.footer`
-    position: relative;
-    height: auto;
-    
-    &::after {
-        background: url(${image}) center center / 100% 100% no-repeat;
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: -100;
-        width: 100%;
-        aspect-ratio: 1440/344;
-        
-    }
-    
-    padding-bottom: 240px;
-    
-    @media ${theme.media.tablet} {
-        padding-bottom: 90px;
-    }
-`
-
-const SocialList = styled.ul`
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 56px 0 32px 0;
-    
-`
-
-const SocialItem = styled.li`
-    &:last-child {
-        position: relative;
-        bottom: -3px;
-    }
-`
-
-const SocialLink = styled.a`
-
-`
-
-const Copyright = styled.small`
-    
-`

@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import {Icon} from "../../../components/icon/Icon";
+import {Icon} from "../../../../components/icon/Icon";
 
 type StyledSkillPropsType = {
     iconId: string
 }
 
-export const Skill = (props: StyledSkillPropsType) => {
+export const Skill: React.FC<StyledSkillPropsType> = (props: StyledSkillPropsType) => {
     return (
         <StyledSkill>
             <Icon iconId={props.iconId}/>

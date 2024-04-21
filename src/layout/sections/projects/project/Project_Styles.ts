@@ -1,29 +1,8 @@
-import React from 'react';
+import {theme} from "../../../../styles/Theme";
 import styled from "styled-components";
-import {Button} from "../../../components/Button";
-import {theme} from "../../../styles/Theme";
 
-type ProjectPropsType = {
-    projectName: string
-    description: string
-    image: string
 
-}
-
-export const Project = (props: ProjectPropsType) => {
-    return (
-        <StyledProject>
-            <ProjectInfoBlock>
-                <ProjectName>{props.projectName}</ProjectName>
-                <ProjectDescription>{props.description}</ProjectDescription>
-                <Button as={'a'} href={'#'} btnType={'projects'}>View Project</Button>
-            </ProjectInfoBlock>
-            <ProjectImage src={props.image} alt={''}/>
-        </StyledProject>
-    );
-};
-
-const StyledProject = styled.div`
+const Project = styled.div`
     display: flex;
     width: 100%;
     max-width: 992px;
@@ -88,5 +67,10 @@ const ProjectImage = styled.img`
     }
 `
 
-
-
+export const S = {
+    Project,
+    ProjectInfoBlock,
+    ProjectName,
+    ProjectDescription,
+    ProjectImage
+}

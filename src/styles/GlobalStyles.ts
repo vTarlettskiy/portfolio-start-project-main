@@ -51,6 +51,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
         margin-bottom: 12px;
         text-transform: uppercase;
+        
+        p {
+            display: none;
+        }
     }
 
     section {

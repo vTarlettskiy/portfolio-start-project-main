@@ -1,44 +1,26 @@
-import React from 'react';
+import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
-import {theme} from "../../styles/Theme";
 
-type PopupPropsType = {
+//Desktop Menu Styles
+
+const DesktopMenu = styled.nav`
+    ul {
+        display: flex;
+        gap: 48px;
+        justify-content: center;
+    }
+
+`
+
+//Mobile Menu Styles
+
+export type PopupPropsType = {
     isOpen: boolean
     setIsOpen: (isOpen: boolean) => void
 }
 
-export const MobileMenu = ({isOpen, setIsOpen}: PopupPropsType) => {
+const MobileMenu = styled.nav`
 
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-                <span></span>
-            </BurgerButton>
-
-            <MobileMenuPopup isOpen={isOpen}>
-                <ul role={'menu'}>
-                    <ListItem role={'menuitem'}>
-                        <Link href="">About</Link>
-                    </ListItem>
-                    <ListItem role={'menuitem'}>
-                        <Link href="">Projects</Link>
-                    </ListItem>
-                    <ListItem role={'menuitem'}>
-                        <Link href="">Contacts</Link>
-                    </ListItem>
-                </ul>
-            </MobileMenuPopup>
-
-        </StyledMobileMenu>
-    );
-};
-
-const StyledMobileMenu = styled.nav`
-    display: none;
-    
-    @media ${theme.media.mobile} {
-        display: block;
-    }
 `
 
 
@@ -49,15 +31,14 @@ const MobileMenuPopup = styled.div<Pick<PopupPropsType, 'isOpen'>>`
     right: 0;
     bottom: 0;
     z-index: 99999;
-    background-color: ${theme.colors.accent}; 
+    background-color: ${theme.colors.accent};
     display: none;
-    
+
     ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
         display: flex;
         justify-content: center;
         align-items: center;
     `}
-    
     ul {
         display: flex;
         gap: 48px;
@@ -74,15 +55,16 @@ const BurgerButton = styled.button<Pick<PopupPropsType, 'isOpen'>>`
     top: 14px;
     right: 11px;
     z-index: 99999999;
-    
+
 
     span {
         display: block;
         width: 18px;
         height: 2px;
-        background-color: ${props=> props.isOpen ? 'transparent' : '#000000'};
+        background-color: ${props => props.isOpen ? 'transparent' : '#000000'};
         position: absolute;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 2px;
 
         ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
             color: rgba(255, 255, 255, 0);
@@ -93,6 +75,7 @@ const BurgerButton = styled.button<Pick<PopupPropsType, 'isOpen'>>`
             display: block;
             width: 100%;
             height: 2px;
+            border-radius: 2px;
             background-color: #000000;
             position: absolute;
             transform: translateY(-6px);
@@ -112,6 +95,7 @@ const BurgerButton = styled.button<Pick<PopupPropsType, 'isOpen'>>`
             position: absolute;
             transform: translateY(6px);
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
 
             ${props => props.isOpen && css<Pick<PopupPropsType, 'isOpen'>>`
                 transform: rotate(-45deg) translateY(0);
@@ -133,3 +117,13 @@ const Link = styled.a`
 
 
 `
+
+export const S = {
+    Link,
+    ListItem,
+    DesktopMenu,
+    MobileMenu,
+    MobileMenuPopup,
+    BurgerButton
+
+}
