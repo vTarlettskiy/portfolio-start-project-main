@@ -28,7 +28,7 @@ const projectsData = [
 
 export const Projects: React.FC = () => {
     return (
-        <StyledProjects>
+        <StyledProjects name={'projects'}>
             <Container>
                 <SectionTitle>Projects</SectionTitle>
                 <FlexWrapper direction={'column'} align={'center'} >
@@ -46,8 +46,7 @@ export const Projects: React.FC = () => {
     );
 };
 
-const StyledProjects = styled.section`
+const StyledProjects = styled.section<{name?: string}>`
     min-height: 100vh;
     position: relative;
-    z-index: 1;
 `

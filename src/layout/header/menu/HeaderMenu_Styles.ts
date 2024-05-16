@@ -1,5 +1,6 @@
 import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
 
 //Desktop Menu Styles
 
@@ -108,18 +109,21 @@ const ListItem = styled.li`
 
 `
 
-const Link = styled.a`
+const NavLink = styled(Link)`
     font-family: Raleway, sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: ${theme.colors.primaryText};
     text-align: center;
-
-
+    
+    &:hover {
+        color: #3af6fc;
+        cursor: pointer;
+    }
 `
 
 export const S = {
-    Link,
+    NavLink,
     ListItem,
     DesktopMenu,
     MobileMenu,

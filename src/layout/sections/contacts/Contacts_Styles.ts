@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Contacts = styled.section`
+const Contacts = styled.section<{name?: string}>`
     height: auto;
 `
 

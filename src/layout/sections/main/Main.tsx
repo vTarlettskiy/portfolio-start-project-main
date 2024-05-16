@@ -10,8 +10,8 @@ import Typewriter from 'typewriter-effect';
 
 export const Main: React.FC = () => {
     return (
-        <S.Main>
-            <Container>
+        <S.Main name={'main'}>
+            <Container  >
                 <FlexWrapper align={'flex-end'} justify={'space-between'} wrap={'wrap-reverse'}>
                     <S.InfoBlock>
                         <S.MainTitle>

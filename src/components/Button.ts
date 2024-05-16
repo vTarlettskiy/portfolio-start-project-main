@@ -30,6 +30,11 @@ export const Button = styled.button<ButtonPropsType>`
         align-items: center;
         justify-content: center;
         color:  black ;
+        
+        &:hover {
+            background-color: ${theme.colors.accent};
+            border: 1px solid ${theme.colors.accent};
+        }
     `}
     
     

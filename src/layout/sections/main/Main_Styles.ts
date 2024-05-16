@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 
-const Main = styled.section`
+const Main = styled.section<{name?: string}>`
     min-height: auto;
     display: flex;
     padding: 110px 0 254px 0;

@@ -54,15 +54,15 @@ export const Particle = () => {
                 },
                 particles: {
                     color: {
-                        value: "#000000",
+                        value: "#f8ff00",
                     },
-                    links: {
-                        color: "#f8ff00",
-                        distance: 150,
-                        enable: true,
-                        opacity: 0.5,
-                        width: 1,
-                    },
+                    // links: {
+                    //     color: "#f8ff00",
+                    //     distance: 150,
+                    //     enable: true,
+                    //     opacity: 0.5,
+                    //     width: 1,
+                    // },
                     move: {
                         direction: "none",
                         enable: true,
@@ -78,16 +78,16 @@ export const Particle = () => {
                             enable: true,
                             area: 1000,
                         },
-                        value: 60,
+                        value: 100,
                     },
                     opacity: {
-                        value: 0.5,
+                        value: 1,
                     },
                     shape: {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 0.5, max: 2 },
+                        value: { min: 1, max: 3 },
                     },
                 },
                 detectRetina: true,
